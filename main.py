@@ -65,7 +65,7 @@ def collecting_data(key=None, contract="amiens", delayms=1000,database= "mydb", 
                 #Create JSON files locally: each file contains the latest update
                 outfile=outfile % contract
                 with open(outfile, "w+", encoding="utf8") as f:
-                    f.write("%s\t%s\n" % (str(js)))
+                    f.write("%s\n" % (str(js)))
            
             if database is not None:
                 #Insert data into the contract collection
@@ -173,22 +173,18 @@ def store_data (locally=True,In_database=True,stop=None):
     datetime.datetime(2019, 4, 15, 13, 28, 40, 408420) 
     
     # Multithreading 
-    if mydb is not None or outfile is not None:
+    if In_database is True or locally is True:
         executor = concurrent.futures.ThreadPoolExecutor(max_workers= len(List_contrat))
         for x in List_contrat :
             executor.submit(collecting_data, key, contract=x, database= mydb, outfile=outfile,
                             delayms=60000, stop_datetime=stop, log_every=1, fLOG=print)
-
-    #print('collections in Velib_data database', mydb.list_collection_names()) #TODO verifier les collections 
-                                #TODO remove above instruction once verified 
-    
-    
+  
 
 
 if __name__ == '__main__':
       
-    stop = datetime.datetime.now() + datetime.timedelta(minutes=2) #None ==> once testing is done 
-    store_data (locally=False,In_database=True,stop=stop )
+    stop = datetime.datetime.now() + datetime.timedelta(minutes=2)  
+    store_data (locally=True,In_database=False,stop=stop ) # we can set stop=None ==> for permenant insertion
     
     
 
