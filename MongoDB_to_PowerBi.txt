@@ -1,13 +1,13 @@
-Pour connecter mongoDB à power BI, il faut :
+Pour connecter mongoDB Ã  power BI (sur Windows) :
 
 1- installer Visual C++ pour Visual Studio 2015 : https://www.microsoft.com/en-us/download/details.aspx?id=48145
 2- installer MongoDB Connector for BI : https://docs.mongodb.com/bi-connector/current/tutorial/install-bi-connector-windows/
 3- installer MongoDB ODBC Driver for BI Connector : https://github.com/mongodb/mongo-odbc-driver/releases/  
-4- une fois l'installation est terminé acceder à l'emplacement de ton connector pour BI  : "C:\Program Files\MongoDB\Connector for BI\2.4\bin\"
-5- exécuter "mongosqld.exe" ( en écrivant mongosqld.exe en terminal ) 
-6- le serveur se lance sur le port 3307, maintenant tu dois configurer le ODBC que tu as installé dans 3 :
-	tu ouvres : “sources de données ODBC Data (64-bit)" sur ton ordi et tu appliques les étapes qui se trouvent dans ce lien dans la partie apres l'installation :
+4- une fois l'installation est terminÃ© acceder Ã  l'emplacement du connector pour BI  : "C:\Program Files\MongoDB\Connector for BI\2.4\bin\"
+5- exÃ©cuter "mongosqld.exe" ( en Ã©crivant mongosqld.exe en terminal ) 
+6- le serveur se lance sur le port 3307, maintenant on dois configurer le ODBC qu'on a installÃ© dans 3 :
+	 ouvrez : â€œsources de donnÃ©es ODBC Data (64-bit)" sur votre ordinateur et appliquez les Ã©tapes qui se trouvent dans ce lien dans la partie apres l'installation :
 	https://www.mongodb.com/blog/post/odbc-driver-for-the-mongodb-connector-for-business-intelligence
- 	quelques remarques : * le Data source Name est au choix , moi je l'ai appelé : MongoDb
-			     * Le TCP/IP server est localhost et dans le port il faut mettre celui du serveur que tu as lancé tout à l'heure : 3307 ( et qui doit être encore en marche) et non pas de mondoDB (27017)
-7-  une fois l'ajout se fait sans erreur, tu ouvres power BI et tu suis ce lien : https://docs.mongodb.com/bi-connector/master/connect/powerbi/ 
+ 	quelques remarques : * le Data source Name est au choix (moi je l'ai appelÃ© : MongoDb)
+			     * Le TCP/IP server est localhost et dans le port il faut mettre celui du serveur que vous avez lancÃ© tout Ã  l'heure : 3307 ( et qui doit Ãªtre encore en marche) et non pas de mondoDB (27017)
+7-  une fois l'ajout se fait sans erreur, ouvrez power BI et suivez ce lien : https://docs.mongodb.com/bi-connector/master/connect/powerbi/ 
